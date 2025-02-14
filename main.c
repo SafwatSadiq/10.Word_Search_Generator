@@ -6,16 +6,16 @@
 char grid[GRID_ROW][GRID_COL];
 
 void gridMaker(){
-    for(int i=0; i<10; i++){
-        for(int j=0; j<10; j++){
+    for(int i=0; i<GRID_ROW; i++){
+        for(int j=0; j<GRID_COL; j++){
             grid[i][j] = '.';
         }
     }
 }
 
 void gridPrinter(){
-    for(int i=0; i<10; i++){
-        for(int j=0; j<10; j++){
+    for(int i=0; i<GRID_ROW; i++){
+        for(int j=0; j<GRID_COL; j++){
             printf("%c", grid[i][j]);
         }
         printf("\n");
