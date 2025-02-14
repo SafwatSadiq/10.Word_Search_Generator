@@ -1,6 +1,9 @@
 #include<stdio.h>
 
-char grid[10][10];
+#define GRID_ROW 10
+#define GRID_COL 10
+
+char grid[GRID_ROW][GRID_COL];
 
 void gridMaker(){
     for(int i=0; i<10; i++){
