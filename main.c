@@ -24,10 +24,10 @@ void gridPrinter(){
 }
 
 void main(){
-    char word1[10] = "Hello", word2[10] = "World";
+    char word1[10] = "Hello", word2[10] = "World", word3[10] = "Project";
     gridMaker();
 
-    int column_num = 3, row_num = 5;
+    int column_num = 3, row_num = 8;
     int len = strlen(word1);
     if(len + column_num < GRID_COL){
         for(int i = 0; i < len; i++){
@@ -41,6 +41,14 @@ void main(){
             grid[row_num + i][column_num] = word2[i];
         }
     }
+    column_num = 0, row_num = 0;
+    len = strlen(word3);
+    if(len + row_num < GRID_ROW && len + column_num < GRID_COL){
+        for(int i = 0; i < len; i++){
+            grid[row_num + i][column_num + i] = word3[i];
+        }
+    }
+
 
 
     gridPrinter();
