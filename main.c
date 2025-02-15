@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<string.h>
 
 #define GRID_ROW 10
 #define GRID_COL 10
