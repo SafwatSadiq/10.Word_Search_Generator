@@ -27,17 +27,20 @@ void main(){
     char word1[10] = "Hello", word2[10] = "World";
     gridMaker();
 
-    for(int i=0; i<1; i++){
-        for(int j=0; j<5; j++){
-            grid[i][j] = word1[j];
+    int column_num = 3, row_num = 5;
+    int len = strlen(word1);
+    if(len + column_num < GRID_COL){
+        for(int i = 0; i < len; i++){
+            grid[row_num][column_num + i] = word1[i];
         }
     }
-    for(int i=1; i<6; i++){
-        for(int j=0; j<1; j++){
-            grid[i][j] = word2[i-1];
+    column_num = 2, row_num = 4;
+    len = strlen(word2);
+    if(len + row_num < GRID_ROW){
+        for(int i = 0; i < len; i++){
+            grid[row_num + i][column_num] = word2[i];
         }
     }
-
 
 
     gridPrinter();
