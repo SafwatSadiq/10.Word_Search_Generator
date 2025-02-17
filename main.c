@@ -40,6 +40,15 @@ void placeVertical(char *word, int row, int column){
     }
 }
 
+void placeDiagonal(char *word, int row, int column){
+    int len = strlen(word);
+    if(len + row < GRID_ROW && len + column < GRID_COL){
+        for(int i = 0; i < len; i++){
+            grid[row + i][column + i] = word[i];
+        }
+    }
+}
+
 void main(){
     char word1[10] = "Hello", word2[10] = "World", word3[10] = "Project";
     gridMaker();
@@ -51,13 +60,8 @@ void main(){
     placeVertical(word2, row_num, column_num);
 
 
-    // column_num = 0, row_num = 0;
-    // len = strlen(word3);
-    // if(len + row_num < GRID_ROW && len + column_num < GRID_COL){
-    //     for(int i = 0; i < len; i++){
-    //         grid[row_num + i][column_num + i] = word3[i];
-    //     }
-    // }
+    column_num = 0, row_num = 0;
+    placeDiagonal(word3, row_num, column_num);
 
 
 
