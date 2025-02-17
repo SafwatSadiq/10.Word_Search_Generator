@@ -22,20 +22,24 @@ void gridPrinter(){
         printf("\n");
     }
 }
+void placeHorizontal(char *word, int row, int column){
+    int len = strlen(word);
+    if(len + column < GRID_COL){
+        for(int i = 0; i < len; i++){
+            grid[row][column + i] = word[i];
+        }
+    }
+}
 
 void main(){
     char word1[10] = "Hello", word2[10] = "World", word3[10] = "Project";
     gridMaker();
 
     int column_num = 3, row_num = 8;
-    int len = strlen(word1);
-    if(len + column_num < GRID_COL){
-        for(int i = 0; i < len; i++){
-            grid[row_num][column_num + i] = word1[i];
-        }
-    }
+    placeHorizontal(word1, row_num, column_num);
+
     column_num = 2, row_num = 4;
-    len = strlen(word2);
+    int len = strlen(word2);
     if(len + row_num < GRID_ROW){
         for(int i = 0; i < len; i++){
             grid[row_num + i][column_num] = word2[i];
