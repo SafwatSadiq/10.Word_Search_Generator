@@ -50,10 +50,8 @@ int checkVertical(char *word, int row, int column){
 
 void placeVertical(char *word, int row, int column){
     int len = strlen(word);
-    if(len + row < GRID_ROW){
-        for(int i = 0; i < len; i++){
-            grid[row + i][column] = word[i];
-        }
+    for(int i = 0; i < len; i++){
+        grid[row + i][column] = word[i];
     }
 }
 
