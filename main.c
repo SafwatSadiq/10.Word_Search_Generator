@@ -66,10 +66,8 @@ int checkDiagonal(char *word, int row, int column){
 
 void placeDiagonal(char *word, int row, int column){
     int len = strlen(word);
-    if(len + row < GRID_ROW && len + column < GRID_COL){
-        for(int i = 0; i < len; i++){
-            grid[row + i][column + i] = word[i];
-        }
+    for(int i = 0; i < len; i++){
+        grid[row + i][column + i] = word[i];
     }
 }
 
