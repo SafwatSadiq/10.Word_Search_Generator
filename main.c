@@ -34,10 +34,8 @@ int checkHorizontal(char *word, int row, int column){
 
 void placeHorizontal(char *word, int row, int column){
     int len = strlen(word);
-    if(len + column < GRID_COL){
-        for(int i = 0; i < len; i++){
-            grid[row][column + i] = word[i];
-        }
+    for(int i = 0; i < len; i++){
+        grid[row][column + i] = word[i];
     }
 }
 
