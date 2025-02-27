@@ -22,6 +22,16 @@ void gridPrinter(){
         printf("\n");
     }
 }
+
+int checkHorizontal(char *word, int row, int column){
+    int len = strlen(word);
+    if(len + column > GRID_COL) return 0; 
+    for(int i = 0; i < len; i++){
+        if(grid[row][column + i] != '.') return 0;
+    }
+    return 1;
+}
+
 void placeHorizontal(char *word, int row, int column){
     int len = strlen(word);
     if(len + column < GRID_COL){
@@ -53,10 +63,9 @@ void main(){
     char word1[10] = "Hello", word2[10] = "World", word3[10] = "Project";
     gridMaker();
 
-    int column_num = 3, row_num = 8;
-    placeHorizontal(word1, row_num, column_num);
+    if (checkHorizontal(word1, 8, 3)) placeHorizontal(word1, 8, 3);
 
-    column_num = 2, row_num = 4;
+    int column_num = 2, row_num = 4;
     placeVertical(word2, row_num, column_num);
 
 
