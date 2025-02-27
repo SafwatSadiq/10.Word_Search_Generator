@@ -39,6 +39,15 @@ void placeHorizontal(char *word, int row, int column){
     }
 }
 
+int checkVertical(char *word, int row, int column){
+    int len = strlen(word);
+    if(len + row > GRID_ROW) return 0; 
+    for(int i = 0; i < len; i++){
+        if(grid[row + i][column] != '.') return 0;
+    }
+    return 1;
+}
+
 void placeVertical(char *word, int row, int column){
     int len = strlen(word);
     if(len + row < GRID_ROW){
@@ -63,11 +72,10 @@ void main(){
 
     if (checkHorizontal(word1, 8, 3)) placeHorizontal(word1, 8, 3);
 
-    int column_num = 2, row_num = 4;
-    placeVertical(word2, row_num, column_num);
+    if (checkVertical(word2, 4, 2)) placeVertical(word2, 4, 2);
 
 
-    column_num = 0, row_num = 0;
+    int column_num = 0, row_num = 0;
     placeDiagonal(word3, row_num, column_num);
 
 
