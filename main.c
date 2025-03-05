@@ -5,6 +5,7 @@
 #define GRID_COL 10
 
 char grid[GRID_ROW][GRID_COL];
+char *words[] = {"HELLO", "WORLD", "PROJECT"};
 
 void gridMaker(){
     for(int i=0; i<GRID_ROW; i++){
@@ -72,15 +73,14 @@ void placeDiagonal(char *word, int row, int column){
 }
 
 void main(){
-    char *word[] = {"HELLO", "WORLD", "PROJECT"};
 
     gridMaker();
     
-    if (checkHorizontal(word[0], 8, 3)) placeHorizontal(word[0], 8, 3);
+    if (checkHorizontal(words[0], 8, 3)) placeHorizontal(words[0], 8, 3);
     
-    if (checkVertical(word[1], 4, 2)) placeVertical(word[1], 4, 2);
+    if (checkVertical(words[1], 4, 2)) placeVertical(words[1], 4, 2);
     
-    if (checkDiagonal(word[2], 0, 0)) placeDiagonal(word[2], 0, 0);
+    if (checkDiagonal(words[2], 0, 0)) placeDiagonal(words[2], 0, 0);
 
 
 
