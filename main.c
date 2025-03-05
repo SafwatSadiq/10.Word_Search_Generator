@@ -72,14 +72,15 @@ void placeDiagonal(char *word, int row, int column){
 }
 
 void main(){
-    char word1[10] = "Hello", word2[10] = "World", word3[10] = "Project";
+    char word[3][10] = {"HELLO", "WORLD", "PROJECT"};
+
     gridMaker();
     
-    if (checkHorizontal(word1, 8, 3)) placeHorizontal(word1, 8, 3);
+    if (checkHorizontal(word[0], 8, 3)) placeHorizontal(word[0], 8, 3);
     
-    if (checkVertical(word2, 4, 2)) placeVertical(word2, 4, 2);
+    if (checkVertical(word[1], 4, 2)) placeVertical(word[1], 4, 2);
     
-    if (checkDiagonal(word3, 0, 0)) placeDiagonal(word3, 0, 0);
+    if (checkDiagonal(word[2], 0, 0)) placeDiagonal(word[2], 0, 0);
 
 
 
