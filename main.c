@@ -72,7 +72,7 @@ void placeDiagonal(char *word, int row, int column){
 }
 
 void main(){
-    char word[3][10] = {"HELLO", "WORLD", "PROJECT"};
+    char *word[3] = {"HELLO", "WORLD", "PROJECT"};
 
     gridMaker();
     
