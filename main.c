@@ -60,7 +60,7 @@ void placeVertical(char *word, int row, int column){
 
 int checkDiagonal(char *word, int row, int column){
     int len = strlen(word);
-    if(len + row > GRID_ROW && len + column > GRID_COL) return 0; 
+    if(len + row > GRID_ROW || len + column > GRID_COL) return 0; 
     for(int i = 0; i < len; i++){
         if(grid[row + i][column + i] != '.') return 0;
     }
