@@ -1,5 +1,7 @@
 #include<stdio.h>
 #include<string.h>
+#include<time.h>
+#include<stdlib.h>
 
 #define GRID_ROW 10
 #define GRID_COL 10
@@ -72,16 +74,25 @@ void placeDiagonal(char *word, int row, int column){
     }
 }
 
+void placeWords(){
+    int row, column;
+    srand(time(0));
+
+    row = rand() % GRID_ROW;
+    column = rand() % GRID_COL;
+
+    if (checkHorizontal(words[0], row, column)) placeHorizontal(words[0], row, column);
+    if (checkVertical(words[1], row, column)) placeVertical(words[1], row, column);
+    if (checkDiagonal(words[2], row, column)) placeDiagonal(words[2], row, column);
+
+
+}
+
 void main(){
 
     gridMaker();
     
-    if (checkHorizontal(words[0], 8, 3)) placeHorizontal(words[0], 8, 3);
-    
-    if (checkVertical(words[1], 4, 2)) placeVertical(words[1], 4, 2);
-    
-    if (checkDiagonal(words[2], 0, 0)) placeDiagonal(words[2], 0, 0);
-
+    placeWords();
 
 
     gridPrinter();
