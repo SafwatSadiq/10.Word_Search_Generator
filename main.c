@@ -75,17 +75,38 @@ void placeDiagonal(char *word, int row, int column){
 }
 
 void placeWords(){
-    int row, column;
+    int isPlaced, row, column;
     srand(time(0));
-
-    row = rand() % GRID_ROW;
-    column = rand() % GRID_COL;
-
-    if (checkHorizontal(words[0], row, column)) placeHorizontal(words[0], row, column);
-    if (checkVertical(words[1], row, column)) placeVertical(words[1], row, column);
-    if (checkDiagonal(words[2], row, column)) placeDiagonal(words[2], row, column);
-
-
+    
+    isPlaced = 0;
+    while(!isPlaced){
+        row = rand() % GRID_ROW;
+        column = rand() % GRID_COL;
+        if (checkHorizontal(words[0], row, column)) {
+            placeHorizontal(words[0], row, column);
+            isPlaced = 1;
+        }
+    }
+    
+    isPlaced = 0;
+    while(!isPlaced){
+        row = rand() % GRID_ROW;
+        column = rand() % GRID_COL;
+        if (checkVertical(words[1], row, column)){
+            placeVertical(words[1], row, column);
+            isPlaced = 1;
+        } 
+    }
+    
+    isPlaced = 0;
+    while(!isPlaced){
+        row = rand() % GRID_ROW;
+        column = rand() % GRID_COL;
+        if (checkDiagonal(words[2], row, column)){
+            placeDiagonal(words[2], row, column);
+            isPlaced = 1;
+        }
+    }
 }
 
 void main(){
@@ -93,7 +114,6 @@ void main(){
     gridMaker();
     
     placeWords();
-
 
     gridPrinter();
 }
