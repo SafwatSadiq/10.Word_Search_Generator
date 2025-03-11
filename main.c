@@ -75,36 +75,24 @@ void placeDiagonal(char *word, int row, int column){
 }
 
 void placeWords(){
-    int isPlaced, row, column;
+    int isPlaced, direction, row, column;
     srand(time(0));
-    
-    isPlaced = 0;
-    while(!isPlaced){
-        row = rand() % GRID_ROW;
-        column = rand() % GRID_COL;
-        if (checkHorizontal(words[0], row, column)) {
-            placeHorizontal(words[0], row, column);
-            isPlaced = 1;
-        }
-    }
-    
-    isPlaced = 0;
-    while(!isPlaced){
-        row = rand() % GRID_ROW;
-        column = rand() % GRID_COL;
-        if (checkVertical(words[1], row, column)){
-            placeVertical(words[1], row, column);
-            isPlaced = 1;
-        } 
-    }
-    
-    isPlaced = 0;
-    while(!isPlaced){
-        row = rand() % GRID_ROW;
-        column = rand() % GRID_COL;
-        if (checkDiagonal(words[2], row, column)){
-            placeDiagonal(words[2], row, column);
-            isPlaced = 1;
+    for(int i = 0; i < 3; i++){
+        isPlaced = 0;
+        while(!isPlaced){
+            direction = rand() % 3;
+            row = rand() % GRID_ROW;
+            column = rand() % GRID_COL;
+            if(direction == 0 && checkHorizontal(words[i], row, column)){
+                placeHorizontal(words[i], row, column);
+                isPlaced = 1;
+            } else if(direction == 1 && checkVertical(words[i], row, column)){
+                placeVertical(words[i], row, column);
+                isPlaced = 1;
+            } else if(direction == 2 && checkDiagonal(words[i], row, column)){
+                placeDiagonal(words[i], row, column);
+                isPlaced = 1;
+            }
         }
     }
 }
