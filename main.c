@@ -5,10 +5,10 @@
 
 #define GRID_ROW 10
 #define GRID_COL 10
-#define TOTAL_WORDS 3
+#define TOTAL_WORDS 5
 
 char grid[GRID_ROW][GRID_COL];
-char *words[] = {"HELLO", "WORLD", "PROJECT"};
+char *words[] = {"HELLO", "WORLD", "PROJECT", "PROGRAM", "GAME"};
 
 void gridMaker(){
     for(int i=0; i<GRID_ROW; i++){
