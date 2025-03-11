@@ -5,6 +5,7 @@
 
 #define GRID_ROW 10
 #define GRID_COL 10
+#define TOTAL_WORDS 3
 
 char grid[GRID_ROW][GRID_COL];
 char *words[] = {"HELLO", "WORLD", "PROJECT"};
@@ -77,7 +78,7 @@ void placeDiagonal(char *word, int row, int column){
 void placeWords(){
     int isPlaced, direction, row, column;
     srand(time(0));
-    for(int i = 0; i < 3; i++){
+    for(int i = 0; i < TOTAL_WORDS; i++){
         isPlaced = 0;
         while(!isPlaced){
             direction = rand() % 3;
