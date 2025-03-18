@@ -112,7 +112,10 @@ void main(){
     randomCharacterPlacement();
     gridPrinter();
 
-    char word[20];
-    printf("Enter a word: ");
-    scanf("%s", word);
+    int found = 0;
+    while(found != 10){
+        char word[20];
+        printf("Enter a word: ");
+        scanf("%s", word);
+    }
 }
