@@ -119,7 +119,7 @@ void main(){
     gridPrinter();
 
     int word_found_count = 0;
-    while(word_found_count != 10){
+    while(word_found_count != TOTAL_WORDS){
         char word[20];
         printf("Enter a word(%d/%d): ", word_found_count, TOTAL_WORDS);
         scanf("%s", word);
