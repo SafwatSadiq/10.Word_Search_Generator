@@ -119,6 +119,7 @@ void main(){
     gridPrinter();
 
     int word_found_count = 0;
+    int word_found[TOTAL_WORDS] = {0};
     while(word_found_count != TOTAL_WORDS){
         char word[20];
         printf("Enter a word(%d/%d): ", word_found_count, TOTAL_WORDS);
@@ -126,7 +127,8 @@ void main(){
         capitalize(word);
 
         for(int i = 0; i < TOTAL_WORDS; i++){
-            if(strcmp(word, words[i]) == 0){
+            if(strcmp(word, words[i]) == 0 && word_found[i] == 0){
+                word_found[i] = 1;
                 word_found_count++;
                 break;
             }
