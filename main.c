@@ -121,7 +121,7 @@ void main(){
     int word_found_count = 0;
     while(word_found_count != 10){
         char word[20];
-        printf("Enter a word: ");
+        printf("Enter a word(%d/%d): ", word_found_count, TOTAL_WORDS);
         scanf("%s", word);
         capitalize(word);
 
