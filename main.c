@@ -118,9 +118,11 @@ void main(){
     randomCharacterPlacement();
     gridPrinter();
 
+    int found;
     int word_found_count = 0;
     int word_found[TOTAL_WORDS] = {0};
     while(word_found_count != TOTAL_WORDS){
+        found = 0;
         char word[20];
         printf("Enter a word(%d/%d): ", word_found_count, TOTAL_WORDS);
         scanf("%s", word);
@@ -130,9 +132,12 @@ void main(){
             if(strcmp(word, words[i]) == 0 && word_found[i] == 0){
                 word_found[i] = 1;
                 word_found_count++;
+                found = 1;
                 break;
             }
         }
         gridPrinter();
+        if(found) printf("Word Found!\n");
+        else printf("Word Not Found\n");
     }
 }
