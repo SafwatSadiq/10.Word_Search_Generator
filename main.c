@@ -106,6 +106,12 @@ void randomCharacterPlacement(){
     }
 }
 
+void capitalize(char *word){
+    for(int i = 0; i < strlen(word); i++){
+        if(word[i] >= 'a' && word[i] <= 'z') word[i] -= 32;
+    }
+}
+
 void main(){
     gridMaker();
     placeWords();
@@ -117,6 +123,8 @@ void main(){
         char word[20];
         printf("Enter a word: ");
         scanf("%s", word);
+        capitalize(word);
+        
         for(int i = 0; i < TOTAL_WORDS; i++){
             if(strcmp(word, words[i]) == 0){
                 found++;
