@@ -107,12 +107,12 @@ void randomCharacterPlacement(){
 }
 
 void main(){
-
     gridMaker();
-    
     placeWords();
-
     randomCharacterPlacement();
-
     gridPrinter();
+
+    char word[20];
+    printf("Enter a word: ");
+    scanf("%s", word);
 }
