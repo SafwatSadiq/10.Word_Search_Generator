@@ -140,4 +140,5 @@ void main(){
         if(found) printf("Word Found!\n");
         else printf("Word Not Found\n");
     }
+    printf("All words found!\nCongratulations!\n");
 }
