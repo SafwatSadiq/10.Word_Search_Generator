@@ -104,5 +104,11 @@ void main(){
     
     placeWords();
 
+    for(int i = 0; i < GRID_ROW; i++){
+        for(int j = 0; j < GRID_COL; j++){
+            if(grid[i][j] == '.') grid[i][j] = 'A' + rand() % 26;
+        }
+    }
+
     gridPrinter();
 }
