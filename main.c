@@ -117,5 +117,12 @@ void main(){
         char word[20];
         printf("Enter a word: ");
         scanf("%s", word);
+        for(int i = 0; i < TOTAL_WORDS; i++){
+            if(strcmp(word, words[i]) == 0){
+                found++;
+                printf("%d\n",found);
+                break;
+            }
+        }
     }
 }
