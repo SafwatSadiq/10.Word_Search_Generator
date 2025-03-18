@@ -124,13 +124,13 @@ void main(){
         printf("Enter a word: ");
         scanf("%s", word);
         capitalize(word);
-        
+
         for(int i = 0; i < TOTAL_WORDS; i++){
             if(strcmp(word, words[i]) == 0){
                 found++;
-                printf("%d\n",found);
                 break;
             }
         }
+        gridPrinter();
     }
 }
