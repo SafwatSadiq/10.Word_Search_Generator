@@ -118,8 +118,8 @@ void main(){
     randomCharacterPlacement();
     gridPrinter();
 
-    int found = 0;
-    while(found != 10){
+    int word_found_count = 0;
+    while(word_found_count != 10){
         char word[20];
         printf("Enter a word: ");
         scanf("%s", word);
@@ -127,7 +127,7 @@ void main(){
 
         for(int i = 0; i < TOTAL_WORDS; i++){
             if(strcmp(word, words[i]) == 0){
-                found++;
+                word_found_count++;
                 break;
             }
         }
