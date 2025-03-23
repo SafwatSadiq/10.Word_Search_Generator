@@ -175,6 +175,12 @@ void removeDiagonally(char *word){
     }
 }
 
+void removeWord(char *word){
+    removeHorizontally(word);
+    removeVertically(word);
+    removeDiagonally(word);
+}
+
 void main(){
     gridMaker();
     placeWords();
@@ -196,9 +202,7 @@ void main(){
                 word_found[i] = 1;
                 word_found_count++;
                 found = 1;
-                removeHorizontally(words[i]);
-                removeVertically(words[i]);
-                removeDiagonally(words[i]);
+                removeWord(words[i]);
                 break;
             }
         }
