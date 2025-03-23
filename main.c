@@ -154,6 +154,27 @@ void removeVertically(char *word){
     }
 }
 
+void removeDiagonally(char *word){
+    int found;
+    int len = strlen(word);
+    for(int i = 0; i < GRID_ROW; i++){
+        for(int j = 0; j < GRID_COL; j++){
+            found = 1;
+            for(int k = 0; k < len; k++){
+                if(grid[i + k][j + k] != word[k]){
+                    found = 0;
+                    break;
+                }
+            }
+            if(found){
+                for(int k = 0; k < len; k++){
+                    grid[i + k][j + k] = '.';
+                }
+            }
+        }
+    }
+}
+
 void main(){
     gridMaker();
     placeWords();
@@ -177,6 +198,7 @@ void main(){
                 found = 1;
                 removeHorizontally(words[i]);
                 removeVertically(words[i]);
+                removeDiagonally(words[i]);
                 break;
             }
         }
