@@ -3,8 +3,8 @@
 #include<time.h>
 #include<stdlib.h>
 
-#define GRID_ROW 10
-#define GRID_COL 10
+#define GRID_ROW 20
+#define GRID_COL 20
 #define TOTAL_WORDS 5
 
 char grid[GRID_ROW][GRID_COL];
