@@ -181,7 +181,7 @@ void removeWord(char *word){
     removeDiagonally(word);
 }
 
-void main(){
+void printAscii(){
     FILE *fp = fopen("data/ascii.txt", "r");
     if(fp == NULL){
         perror("Error opening file");
@@ -192,6 +192,10 @@ void main(){
         printf("%s", buffer);
     }
     printf("\n");
+}
+
+void main(){
+    printAscii();
 
     gridMaker();
     placeWords();
