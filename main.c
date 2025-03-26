@@ -5,7 +5,7 @@
 
 #define GRID_ROW 20
 #define GRID_COL 20
-#define TOTAL_WORDS 5
+#define TOTAL_WORDS 10
 
 char grid[GRID_ROW][GRID_COL];
 char *words[] = {"HELLO", "WORLD", "PROJECT", "PROGRAM", "GAME"};
