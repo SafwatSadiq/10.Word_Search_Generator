@@ -182,6 +182,17 @@ void removeWord(char *word){
 }
 
 void main(){
+    FILE *fp = fopen("data/ascii.txt", "r");
+    if(fp == NULL){
+        perror("Error opening file");
+        return;
+    }
+    char buffer[256];
+    while(fgets(buffer, sizeof(buffer), fp) != NULL){
+        printf("%s", buffer);
+    }
+    printf("\n");
+
     gridMaker();
     placeWords();
     randomCharacterPlacement();
