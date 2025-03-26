@@ -26,6 +26,7 @@ void gridPrinter(){
         }
         printf("\n");
     }
+    printf("\n");
 }
 
 int checkHorizontal(char *word, int row, int column){
@@ -192,7 +193,7 @@ void printAscii(){
     while(fgets(buffer, sizeof(buffer), fp) != NULL){
         printf("%s", buffer);
     }
-    printf("\n");
+    printf("\n\n");
 }
 
 void main(){
