@@ -20,6 +20,7 @@ void gridMaker(){
 
 void gridPrinter(){
     for(int i=0; i<GRID_ROW; i++){
+        printf("       ");
         for(int j=0; j<GRID_COL; j++){
             printf(" %c ", grid[i][j]);
         }
