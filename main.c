@@ -8,7 +8,7 @@
 #define TOTAL_WORDS 10
 
 char grid[GRID_ROW][GRID_COL];
-char *words[] = {"HELLO", "WORLD", "PROJECT", "PROGRAM", "GAME"};
+char *words[] = {"HELLO", "WORLD", "PROJECT", "PROGRAM", "GAME", "COMPUTER", "SCIENCE", "ENGINEERING", "MATHEMATICS", "PHYSICS"};
 
 void gridMaker(){
     for(int i=0; i<GRID_ROW; i++){
