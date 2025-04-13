@@ -197,11 +197,11 @@ void printAscii(){
 }
 
 void main(){
-    printAscii();
-
+    system("cls");
     gridMaker();
     placeWords();
     randomCharacterPlacement();
+    printAscii();
     gridPrinter();
 
     int found;
@@ -223,7 +223,10 @@ void main(){
                 break;
             }
         }
+        system("cls");
+        printAscii();
         gridPrinter();
+
         if(found) printf("Word Found!\n");
         else printf("Word Not Found\n");
     }
